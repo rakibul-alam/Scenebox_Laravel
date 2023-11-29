@@ -9,14 +9,13 @@ class GuzzleRequestController extends Controller
 {
     public function index()
     {
-
         $client = new Client();
 
-        try {
             $response = $client->post('https://banglaflix.com.bd/sceneabox/api/flix_json_app_data', [
                 'form_params' => [
                     'view' => 'home',
                     'ct' => 'home',
+                    'msisdn' =>8801841464612,
                 ],
             ]);
 
@@ -24,39 +23,9 @@ class GuzzleRequestController extends Controller
             // dd($data);
             // dd(json_decode($response->getBody(), true));
             // Pass the data to the view
-            return view('welcome', ['data' => $data]);
-        } catch (\Exception $e) {
-            // Handle exceptions (e.g., connection error, API error)
-            return view('error', ['error' => $e->getMessage()]);
-        }
+            return view('home', ['data' => $data]);
 
     }
-
-    public function makeHttpRequest()
-    {
-        // Create a Guzzle client instance
-        // $client = new Client();
-
-        // Make a GET request
-        // $body = $response->getBody()->getContents();
-
-        // Decode JSON if the response is in JSON format
-        // $data = json_decode($body, true);
-
-        // return response()->json($data);
-
-        // $response = $client->post('https://banglaflix.com.bd/sceneabox/api/flix_json_app_data', [
-        //     'form_params' => [
-        //         'view' => 'home',
-        //         'ct' => 'home',
-        //     ],
-        // ]);
-
-        // dd(json_decode($response->getBody(), true));
-
-        // return view('welcome');
-    }
-
     /**
      * Show the form for creating a new resource.
      */
