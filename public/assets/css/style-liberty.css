@@ -14873,9 +14873,36 @@ header.nav-fixed {
   -moz-border-radius: 6px;
 }
 
+.post.img{
+    top: 30%;
+    left: 25%;
+  }
+
+  .w3l-grids .box16 {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    display: block;
+}
+
+.w3l-grids .box16 img.pre-img {
+    top: 10px;
+    /* left: 85%; */
+    right: 5px;
+    width: 30px;
+    position: absolute;
+}
+
+.w3l-grids .box16 .box-content, .w3l-grids .box16:after {
+    width: 100%;
+    position: absolute;
+    left: 0;
+
+}
+
 .w3l-main-slider .banner-web-view {
     background-size: cover;
-    min-height: 550px;
+    min-height: 560px;
     position: relative;
     z-index: 0;
     display: grid;
