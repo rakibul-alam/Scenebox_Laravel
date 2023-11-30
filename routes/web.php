@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::get('/', [App\Http\Controllers\GuzzleRequestController::class, 'index'])->name('home');
+
 
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('/', GuzzleRequestController::class);
 
-    Route::get('/tests',  'GuzzleRequestController@makeHttpRequest')->name('tests');
 });

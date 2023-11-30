@@ -73,6 +73,10 @@
                 </section>
             @endif
         @endif
+
+        {{-- @foreach ($contenttype['contents'] as $index => $content)
+        <a href="{{ $content['contentid'] }}">Show</a>
+        @endforeach --}}
     @endforeach
     <div style="margin: 8px auto; display: block; text-align:center;">
     </div>
