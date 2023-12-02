@@ -2,6 +2,7 @@
 <script src="https://m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <script src="{{ asset('assets/js/jquery-1.9.1.min.js') }}"></script>
   <script src="{{ asset('assets/js/easyResponsiveTabs.js') }}"></script>
+
   <script type="text/javascript">
     $(document).ready(function () {
       //Horizontal Tab

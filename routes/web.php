@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\GuzzleRequestController::class, 'index'])->name('home');
 
-
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('/', GuzzleRequestController::class);
 

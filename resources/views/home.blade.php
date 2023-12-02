@@ -40,10 +40,17 @@
                             </div>
                         </div>
                         <div class="w3l-populohny-grids">
+
                             @foreach ($contenttype['contents'] as $index => $content)
+
                             @if ($index < 4)
                                 <div class="item vhny-grid">
+
+                                    <input type="text" id="url" style="width:100%" value="https://stream.bdflixlive.com/xYDHlandhUElzhdoqk/mp4:iDSdCZhqEqk.mp4/playlist.m3u8"> <input type="button" id="btn" value="play">
+                                    <video id="video" class="video-js vjs-default-skin" preload="none" crossorigin="true" controls width="640" height="268" controls>
+                                    </video>
                                     <div class="box16 mb-0">
+
                                         <a href="#" onclick="clickLink()">
                                             <figure>
                                                 <img class="img-fluid" src="{{ $content['image_location'] }}" alt="">
@@ -74,15 +81,20 @@
             @endif
         @endif
 
+
         {{-- @foreach ($contenttype['contents'] as $index => $content)
         <a href="{{ $content['contentid'] }}">Show</a>
         @endforeach --}}
     @endforeach
     <div style="margin: 8px auto; display: block; text-align:center;">
     </div>
+
 @endsection
 
 @push('scripts')
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
     <script>
         // Ensure jQuery is loaded before this script
         $(document).ready(function() {
@@ -95,6 +107,14 @@
 
             });
         });
+
+        $(document).ready(function() {
+  $("#btn").on("click", function() {
+    $("#video").html("<source src='"+ $("#url").val() +"' type='application/x-mpegURL'>");
+    var ply = videojs("video");
+    ply.play();
+  });
+});
     </script>
 @endpush
 
