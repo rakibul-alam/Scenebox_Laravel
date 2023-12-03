@@ -22,4 +22,7 @@ Route::get('/', [App\Http\Controllers\GuzzleRequestController::class, 'index'])-
 Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('/', GuzzleRequestController::class);
 
+    Route::get('/play-video/{contentid}', 'GuzzleRequestController@show')->name('play-video.home');
+
+
 });

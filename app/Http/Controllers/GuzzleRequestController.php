@@ -27,24 +27,22 @@ class GuzzleRequestController extends Controller
 
     }
 
-    public function show(){
+    public function show($contentid){
         $client = new Client();
 
         $response = $client->post('https://banglaflix.com.bd/sceneabox/api/flixlist_json_app_single', [
             'form_params' => [
-                'cc' => 'iDSdCZhqEqk',
+                'cc' => $contentid,
             ],
         ]);
 
         $data = json_decode($response->getBody(), true);
         // dd($data);
-        dd(json_decode($response->getBody(), true));
+        // dd(json_decode($response->getBody(), true));
         // Pass the data to the view
-        return view('home', ['data' => $data]);
+        return view('layouts.show', ['data' => $data]);
     }
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         //

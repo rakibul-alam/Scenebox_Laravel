@@ -3,4 +3,8 @@
 <!-- Template CSS -->
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&amp;display=swap"
     rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/alt/video-js-cdn.css" rel="stylesheet">
+
+    <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://www.sceneabox.com/frontend/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://www.sceneabox.com/frontend/assets/css/custom.css">
+

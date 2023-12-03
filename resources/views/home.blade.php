@@ -10,10 +10,10 @@
                                 <li>
                                     <div class="slider-info banner-web-view" style="background-size: cover; background-image: url({{ $content['image_location'] }})">
                                         <div class="banner-info box16">
-                                            <a href="#" class="popup-with-zoom-anim play-view1" onclick="clickLink()">
+                                            <a href="{{ route('play-video.home',$content["contentid"]) }}">
                                                 <span class="video-play-icon fa fa-play">
-                                            </span>
-                                            <h6>Watch Trailer</h6>
+                                                </span>
+                                                <h6>Watch Trailer</h6>
                                             </a>
                                         </div>
                                     </div>
@@ -45,13 +45,8 @@
 
                             @if ($index < 4)
                                 <div class="item vhny-grid">
-
-                                    <input type="text" id="url" style="width:100%" value="https://stream.bdflixlive.com/xYDHlandhUElzhdoqk/mp4:iDSdCZhqEqk.mp4/playlist.m3u8"> <input type="button" id="btn" value="play">
-                                    <video id="video" class="video-js vjs-default-skin" preload="none" crossorigin="true" controls width="640" height="268" controls>
-                                    </video>
                                     <div class="box16 mb-0">
-
-                                        <a href="#" onclick="clickLink()">
+                                        <a href="{{ route('play-video.home',$content["contentid"]) }}">
                                             <figure>
                                                 <img class="img-fluid" src="{{ $content['image_location'] }}" alt="">
                                             </figure>
@@ -70,7 +65,7 @@
                                         </a>
                                     </div>
                                     <h2>
-                                        <a class="title-gd" href="/play/EB43pg3V3Bo" style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{ $content['name'] }}</a>
+                                        <a class="title-gd" href="{{ route('play-video.home',$content["contentid"]) }}" style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{ $content['name'] }}</a>
                                     </h2>
                                 </div>
                             @endif
@@ -93,29 +88,6 @@
 
 @push('scripts')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
-    <script>
-        // Ensure jQuery is loaded before this script
-        $(document).ready(function() {
-            // Handle click events on elements with the class 'play-video'
-            $('.play-video').on('click', function(e) {
-                e.preventDefault();
-
-                // Get the video URL from the data-video-url attribute
-                var videoUrl = $(this).data('https://banglaflix.com.bd/sceneabox/api/flixlist_json_app_single');
-
-            });
-        });
-
-        $(document).ready(function() {
-  $("#btn").on("click", function() {
-    $("#video").html("<source src='"+ $("#url").val() +"' type='application/x-mpegURL'>");
-    var ply = videojs("video");
-    ply.play();
-  });
-});
-    </script>
 @endpush
 
 
