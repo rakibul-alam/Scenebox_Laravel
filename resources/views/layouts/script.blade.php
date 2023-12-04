@@ -4,9 +4,7 @@
   <script src="{{ asset('assets/js/easyResponsiveTabs.js') }}"></script>
 
   {{-- //video js --}}
-  <script src="http://www.sceneabox.com/videojs-7.6.0/videojs-ie8.min.js"></script>
-<script src="http://www.sceneabox.com/videojs-7.6.0/video.js"></script>
-<script src="http://www.sceneabox.com/videojs-7.6.0/videojs-seek-buttons.js"></script>
+  <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
 <!-- Template CSS -->
 <script src="http://www.sceneabox.com/frontend/assets/js/monetization.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

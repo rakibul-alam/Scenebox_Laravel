@@ -37,10 +37,11 @@ class GuzzleRequestController extends Controller
         ]);
 
         $data = json_decode($response->getBody(), true);
-        // dd($data);
+        $content = $data ? $data[0]:'';
+        // dd($content);
         // dd(json_decode($response->getBody(), true));
         // Pass the data to the view
-        return view('layouts.show', ['data' => $data]);
+        return view('layouts.show', ['content' => $content]);
     }
 
     public function create()

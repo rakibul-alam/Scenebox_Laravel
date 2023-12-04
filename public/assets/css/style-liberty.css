@@ -14900,6 +14900,7 @@ header.nav-fixed {
 
 }
 
+
 .w3l-main-slider .banner-web-view {
     background-size: cover;
     min-height: 560px;
@@ -18113,7 +18114,6 @@ ul.page-numbers li a:hover {
 
 .w3l-text-8 .text,
 .genre-single-page {
-  max-width: 740px;
   margin: 0 auto;
 }
 
@@ -18316,6 +18316,13 @@ ul.page-numbers li a:hover {
 .w3l-about4 .new-block {
   display: grid;
   align-items: center;
+  height: 500px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.my-player_html5_api{
+    position: absolute;
 }
 
 .w3l-about4 .pop-img-ab {
@@ -18335,6 +18342,7 @@ ul.page-numbers li a:hover {
   -ms-border-radius: 8px;
   position: relative;
   z-index: 1;
+  height: 100%;
 }
 
 .w3l-about4 .pop-img-ab::before {
