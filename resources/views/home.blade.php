@@ -10,8 +10,9 @@
                                 <li>
                                     <div class="slider-info banner-web-view" style="background-size: cover; background-image: url({{ $content['image_location'] }})">
                                         <div class="banner-info box16">
-                                            <a href="{{ route('play-video.home',$content["contentid"]) }}">
-                                                <span class="video-play-icon fa fa-play">
+                                            <a href="{{ route('play.home',$content["contentid"]) }}" class="popup-with-zoom-anim play-view1">
+                                                <span class="video-play-icon">
+                                                    <span class="fa fa-play"></span>
                                                 </span>
                                                 <h6>Watch Trailer</h6>
                                             </a>
@@ -46,7 +47,7 @@
                             @if ($index < 4)
                                 <div class="item vhny-grid">
                                     <div class="box16 mb-0">
-                                        <a href="{{ route('play-video.home',$content["contentid"]) }}">
+                                        <a href="{{ route('play.home',$content["contentid"]) }}">
                                             <figure>
                                                 <img class="img-fluid" src="{{ $content['image_location'] }}" alt="">
                                             </figure>
@@ -65,7 +66,7 @@
                                         </a>
                                     </div>
                                     <h2>
-                                        <a class="title-gd" href="{{ route('play-video.home',$content["contentid"]) }}" style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{ $content['name'] }}</a>
+                                        <a class="title-gd" href="{{ route('play.home',$content["contentid"]) }}" style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{ $content['name'] }}</a>
                                     </h2>
                                 </div>
                             @endif
@@ -75,11 +76,6 @@
                 </section>
             @endif
         @endif
-
-
-        {{-- @foreach ($contenttype['contents'] as $index => $content)
-        <a href="{{ $content['contentid'] }}">Show</a>
-        @endforeach --}}
     @endforeach
     <div style="margin: 8px auto; display: block; text-align:center;">
     </div>

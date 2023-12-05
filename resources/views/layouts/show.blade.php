@@ -6,12 +6,14 @@
     <div class="container py-5">
         <div class="d-grid-1 py-lg-4">
             <div class="text">
-                <div class="w3l-about4 new-block" id="about">
-                    <div>
-                        <video id="my-player_html5_api" class="video-js vjs-default-skin"  data-setup="{&quot;fluid&quot;: true, &quot;autoplay&quot;:true, &quot;playbackRates&quot;: [0.5,1,1.25,1.5, 2]
-                        }"   controls preload="auto" poster="{{ $content['image_location'] }}" style="" tabindex="-1" role="application">
-                            <source src="{{ $content['url'] }}" type="application/x-mpegURL">
-                        </video>
+                <div class="video-container">
+                    <video id="my-player_html5_api" class="video-js vjs-default-skin vjs-big-play-button_cust w-100"  data-setup="{&quot;fluid&quot;: true, &quot;autoplay&quot;:true, &quot;playbackRates&quot;: [0.5,1,1.25,1.5, 2]
+                    }"   controls preload="auto" poster="{{ $content['image_location'] }}" style="" tabindex="-1" role="application">
+                        <source src="{{ $content['url'] }}" type="application/x-mpegURL">
+                    </video>
+
+                    <div class="custom-loader">
+                        <img src="{{ asset('assets/images/p6.gif') }}" alt="Loader">
                     </div>
                 </div>
 
@@ -53,10 +55,25 @@
 @endsection
 
 @push('scripts')
-<script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
     <script>
-        videojs('my-player_html5_api', {}, function () {
-            // Player is ready
+        // videojs('my-player_html5_api', {}, function () {
+        //     // Player is ready
+        // });
+
+        videojs('my-player_html5_api').ready(function() {
+            var myPlayer = this;
+
+            // Show loader while waiting for the video to start
+            myPlayer.on('waiting', function() {
+                // Display loader
+                document.querySelector('.custom-loader').style.display = 'block';
+            });
+
+            // Hide loader when the video is ready and playing
+            myPlayer.on('playing', function() {
+                // Hide loader
+                document.querySelector('.custom-loader').style.display = 'none';
+            });
         });
     </script>
 @endpush

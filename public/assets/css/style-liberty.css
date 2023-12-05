@@ -6411,7 +6411,12 @@ a.close.disabled {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 560px;
+    max-width: 100%;
+    margin: 1.75rem auto;
+  }
+
+  .video-container {
+    max-width: 100%;
     margin: 1.75rem auto;
   }
 
@@ -18322,7 +18327,11 @@ ul.page-numbers li a:hover {
 }
 
 .my-player_html5_api{
-    position: absolute;
+ position: absolute;
+}
+
+.vjs-big-play-button_cust{
+    margin-top: 50px;
 }
 
 .w3l-about4 .pop-img-ab {
