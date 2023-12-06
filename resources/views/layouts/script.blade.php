@@ -2,20 +2,11 @@
 <script src="https://m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <script src="{{ asset('assets/js/jquery-1.9.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/easyResponsiveTabs.js') }}"></script>
-<script src="{{ asset('assets/js/owl.carousel.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-{{-- <script src="{{ asset('assets/js/jquery.theme-change.js') }}"></script> --}}
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
-
 
   {{-- //video js --}}
 <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
 <!-- Template CSS -->
-<script src="http://www.sceneabox.com/frontend/assets/js/monetization.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src='https://www.googletagmanager.com/gtag/js?id=UA-149859901-1'></script>
 
   {{-- //video js --}}
 

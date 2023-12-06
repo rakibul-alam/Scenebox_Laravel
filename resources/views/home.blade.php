@@ -10,7 +10,7 @@
                                 <li>
                                     <div class="slider-info banner-web-view" style="background-size: cover; background-image: url({{ $content['image_location'] }})">
                                         <div class="banner-info box16">
-                                            <a href="{{ route('play.home',$content["contentid"]) }}" class="popup-with-zoom-anim play-view1">
+                                            <a href="{{ route('play.home',$content["contentid"]) }}" class="play-view1">
                                                 <span class="video-play-icon">
                                                     <span class="fa fa-play"></span>
                                                 </span>
