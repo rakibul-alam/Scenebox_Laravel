@@ -24,5 +24,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
 
     Route::get('/play/{contentid}', 'GuzzleRequestController@show')->name('play.home');
 
+    Route::get('/play', 'GuzzleRequestController@showAll')->name('play.home');
+
 
 });

@@ -7,7 +7,7 @@
         <div class="d-grid-1 py-lg-4">
             <div class="text">
                 <div class="video-container">
-                    <video id="my-player_html5_api" class="video-js vjs-default-skin vjs-big-play-button_cust w-100"  data-setup="{&quot;fluid&quot;: true, &quot;autoplay&quot;:true, &quot;playbackRates&quot;: [0.5,1,1.25,1.5, 2]
+                    <video id="my-player" class="video-js vjs-default-skin vjs-big-play-button_cust w-100"  data-setup="{&quot;fluid&quot;: true, &quot;autoplay&quot;:true, &quot;playbackRates&quot;: [0.5,1,1.25,1.5, 2]
                     }"   controls preload="auto" poster="{{ $content['image_location'] }}" style="" tabindex="-1" role="application">
                         <source src="{{ $content['url'] }}" type="application/x-mpegURL">
                     </video>
@@ -49,8 +49,38 @@
                     </div>
                 </div>
            </div>
-      </div>
+
+            {{-- you may also like --}}
+                    <div class="grids-main ">
+                        <div class="container py-lg-4">
+                            <div class="headerhny-title">
+                                <div class="headerhny-left">
+                                    <h3 class="hny-title">You May Also Like</h3>
+                                </div>
+                            </div>
+                                <div class="w3l-populohny-grids">
+                                    <div class="item vhny-grid">
+                                      <div class="box16 mb-0">
+                                        <a href="http://www.sceneabox.com/play/bk58rKfeXII">
+                                        <figure>
+                                            <img class="img-fluid" src="{{ $content['image_location'] }}" alt="">
+                                        </figure>
+                                            <h3 class="title" style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;"> Bikal Belar Pakhi</h3>
+                                            <h4> <span class="post"><span class="fa fa-clock-o"> </span> 40:19
+                                            </span>
+                                            </h4>
+                                          <span class="fa fa-play video-icon" aria-hidden="true"></span>
+                                         </a>
+                                       </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            {{-- you may also like --}}
+        </div>
   </div>
+
+
 </section>
 @endsection
 
@@ -60,17 +90,17 @@
         //     // Player is ready
         // });
 
-        videojs('my-player_html5_api').ready(function() {
+        videojs('my-player').ready(function() {
             var myPlayer = this;
 
             // Show loader while waiting for the video to start
-            myPlayer.on('waiting', function() {
+            my-player.on('waiting', function() {
                 // Display loader
                 document.querySelector('.custom-loader').style.display = 'block';
             });
 
             // Hide loader when the video is ready and playing
-            myPlayer.on('playing', function() {
+            my-player.on('playing', function() {
                 // Hide loader
                 document.querySelector('.custom-loader').style.display = 'none';
             });

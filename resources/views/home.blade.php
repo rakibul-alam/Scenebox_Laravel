@@ -36,14 +36,13 @@
                                     <h3 class="hny-title">{{ $contenttype['catname'] }}</h3>
                                 </div>
                                 <div class="headerhny-right text-lg-right">
-                                    <h4><a class="show-title" href="genre.html">Show all</a></h4>
+                                    <h4><a class="show-title" href="{{ route('play.home',$content["contentid"]) }}">Show all</a></h4>
                                 </div>
                             </div>
                         </div>
                         <div class="w3l-populohny-grids">
 
                             @foreach ($contenttype['contents'] as $index => $content)
-
                             @if ($index < 4)
                                 <div class="item vhny-grid">
                                     <div class="box16 mb-0">
