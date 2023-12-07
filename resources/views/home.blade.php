@@ -30,16 +30,18 @@
             @if($contenttype['contents'])
                 <section class="w3l-grids">
                     <div class="container py-lg-3 custom_height">
-                        <div class="headerhny-title">
-                            <div class="w3l-title-grids">
-                                <div class="headerhny-left">
-                                    <h3 class="hny-title">{{ $contenttype['catname'] }}</h3>
-                                </div>
-                                <div class="headerhny-right text-lg-right">
-                                    <h4><a class="show-title" href="{{ route('play.home',$content["contentid"]) }}">Show all</a></h4>
+                      @if(isset($contenttype['catname']))
+                            <div class="headerhny-title">
+                                <div class="w3l-title-grids">
+                                    <div class="headerhny-left">
+                                        <h3 class="hny-title">{{ $contenttype['catname'] }}</h3>
+                                    </div>
+                                    <div class="headerhny-right text-lg-right">
+                                        <h4><a class="show-title" href="{{ route('play.show-all', ['catname' => $contenttype['catname'], 'catcode' => $contenttype['catcode']]) }}">Show all</a></h4>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="w3l-populohny-grids">
 
                             @foreach ($contenttype['contents'] as $index => $content)

@@ -44,23 +44,23 @@ class GuzzleRequestController extends Controller
         return view('layouts.show', ['content' => $content]);
     }
 
-    public function showAll(){
+    public function showAll($catname, $catcode){
         $client = new Client();
 
         $response = $client->post('https://banglaflix.com.bd/sceneabox/api/flixlist_json_app', [
             'form_params' => [
-                'ct'   => "mov",
+                'ct'   => 'mvo','mov','nrv','rec','dsr','dra','msn',
                 'tc'   => 0,
-                'page' => 1
+                'page' => 1,
+                'catname' => $catname,
+                'catcode' => $catcode,
             ],
         ]);
 
         $data = json_decode($response->getBody(), true);
-        // $content = $data ? $data[0]:'';
-        // dd($content);
-        dd(json_decode($response->getBody(), true));
+        // dd(json_decode($response->getBody(), true));
         // Pass the data to the view
-        return view('layouts.show', ['data' => $data]);
+        return view('layouts.show-all', ['data' => $data, 'catname' => $catname, 'catcode' => $catcode]);
     }
 
     public function create()

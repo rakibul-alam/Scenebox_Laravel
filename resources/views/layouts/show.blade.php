@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-
 <section class="w3l-text-8 genre-single">
     <div class="container py-5">
         <div class="d-grid-1 py-lg-4">
@@ -51,7 +50,7 @@
            </div>
 
             {{-- you may also like --}}
-                    <div class="grids-main ">
+                    {{-- <div class="grids-main ">
                         <div class="container py-lg-4">
                             <div class="headerhny-title">
                                 <div class="headerhny-left">
@@ -75,7 +74,7 @@
                                     </div>
                                 </div>
                         </div>
-                    </div>
+                    </div> --}}
             {{-- you may also like --}}
         </div>
   </div>

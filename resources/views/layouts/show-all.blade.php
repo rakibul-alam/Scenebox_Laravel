@@ -1,56 +1,51 @@
 @extends('layouts.main')
-
 @section('content')
-
-<section class="w3l-text-8 genre-single">
-    <div class="container py-5">
-        <div class="d-grid-1 py-lg-4">
-            <div class="text">
-                @foreach($data['contents'] as $content)
-                <div class="video-container">
-                    <video id="my-player" class="video-js vjs-default-skin vjs-big-play-button_cust w-100"  data-setup="{&quot;fluid&quot;: true, &quot;autoplay&quot;:true, &quot;playbackRates&quot;: [0.5,1,1.25,1.5, 2]
-                    }"   controls preload="auto" poster="{{ $content['image_location'] }}" style="" tabindex="-1" role="application">
-                        <source src="{{ $content['url'] }}" type="application/x-mpegURL">
-                    </video>
-
-                    <div class="custom-loader">
-                        <img src="{{ asset('assets/images/p6.gif') }}" alt="Loader">
-                    </div>
-                </div>
-                <div class="genre-single-page my-lg-5 my-4">
-
-                        <div class="row ab-grids-sec align-items-center">
-                            <div class="col-lg-4 gen-right">
-                                <a href="#"><img class="img-fluid" src="{{ $content['image_location'] }}"></a>
-                            </div>
-                            <div class="col-lg-4 gen-left pl-lg-4 mt-lg-0 mt-5">
-                                <h3 class="hny-title">{{ $content['name'] }}</h3>
-                                <p class="mt-2">{{$content['name']}}</p>
-                                {{-- <div style="margin-top:15px;margin-bottom: 20px;">
-                                    <a href="{{ $content['url'] }}"><img class="subscribe_img" src="http://www.sceneabox.com/img/watch-full.png"></a>
-                                </div> --}}
-                            </div>
-                            <div class="col-lg-4 gen-right-1">
-                                <div class="mb-3">
-                                    <p><b>Type</b> </p>
-                                    <p>{{ $content['catname'] }} </p>
-                                </div>
-                                <div class="mb-3">
-                                    <p><b>Duration</b> </p>
-                                    <p>{{ $content['duration'] }} </p>
-                                </div>
-                                <div class="mb-3">
-                                    <p><b>By</b> </p>
-                                    <p>{{ $content['cp'] }}</p>
-                                </div>
+    @if($data['contents'])
+        <section class="w3l-grids">
+            <div class="container py-lg-3 custom_height">
+                @if(isset($contenttype['catname']))
+                    <div class="headerhny-title">
+                        <div class="w3l-title-grids">
+                            <div class="headerhny-left">
+                                <h3 class="hny-title">{{ $data['catname'] }}</h3>
                             </div>
                         </div>
-                        <hr> <!-- Add a horizontal line between videos for better separation -->
+                    </div>
+                @endif
+                <div class="w3l-populohny-grids">
+                    @foreach ($data['contents'] as $content)
+                            <div class="item vhny-grid">
+                                <div class="box16 mb-0">
+                                    <a href="{{ route('play.home', $content["contentid"]) }}">
+                                        <figure>
+                                            <img class="img-fluid" src="{{ $content['image_location'] }}" alt="">
+                                        </figure>
+                                        @if ($content['isfree'] == 0)
+                                            <img class="pre-img img-fluid" src="{{ asset('assets/images/c7.png') }}">
+                                        @endif
+                                        <div class="box-content">
+                                            <h4>
+                                                <span class="post">
+                                                    <span class="fa fa-clock-o"></span>
+                                                    {{ $content['duration'] }}
+                                                </span>
+                                            </h4>
+                                        </div>
+                                        <span class="fa fa-play video-icon" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                                <h2>
+                                    <a class="title-gd" href="{{ route('play.home', $content["contentid"]) }}" style="overflow: hidden;text-overflow: ellipsis;display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{ $content['name'] }}</a>
+                                </h2>
+                            </div>
                     @endforeach
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+    @endif
 
+    <div style="margin: 8px auto; display: block; text-align:center;"></div>
 @endsection
+
+@push('scripts')
+@endpush
