@@ -23,8 +23,7 @@ Route::namespace('App\Http\Controllers')->group(function () {
     Route::resource('/', GuzzleRequestController::class);
 
     Route::get('/play/{contentid}', 'GuzzleRequestController@show')->name('play.home');
-    
-    Route::get('/play-all/{catname}/{catcode}', 'GuzzleRequestController@showAll')->name('play.show-all');
 
+    Route::get('/play-all/{catname}/{ct}-{tc}', 'GuzzleRequestController@showAll')->name('play.show-all');
 
 });

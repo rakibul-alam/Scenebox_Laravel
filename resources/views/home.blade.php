@@ -37,7 +37,9 @@
                                         <h3 class="hny-title">{{ $contenttype['catname'] }}</h3>
                                     </div>
                                     <div class="headerhny-right text-lg-right">
-                                        <h4><a class="show-title" href="{{ route('play.show-all', ['catname' => $contenttype['catname'], 'catcode' => $contenttype['catcode']]) }}">Show all</a></h4>
+                                        <h4>
+                                            <a class="show-title" href="{{ route('play.show-all', ['catname' => $contenttype['catname'], 'ct' => $contenttype['catcode'], 'tc' => $contenttype['tc']]) }}">Show all</a>
+                                        </h4>
                                     </div>
                                 </div>
                             </div>

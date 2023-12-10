@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
         <div class="container">
             <h1>
-                <a class="navbar-brand" href="http://www.sceneabox.com" id="lightLogo"><img src="{{ asset('assets/images/sceneboxlogo.png') }}" alt="Your logo" title="Your logo" style="height:35px;margin-top:-10px;">
+                <a class="navbar-brand" href="http://127.0.0.1:8000/" id="lightLogo"><img src="{{ asset('assets/images/sceneboxlogo.png') }}" alt="Your logo" title="Your logo" style="height:35px;margin-top:-10px;">
                 </a>
             </h1>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"

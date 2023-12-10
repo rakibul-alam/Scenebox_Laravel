@@ -3,7 +3,6 @@
     @if($data['contents'])
         <section class="w3l-grids">
             <div class="container py-lg-3 custom_height">
-                @if(isset($contenttype['catname']))
                     <div class="headerhny-title">
                         <div class="w3l-title-grids">
                             <div class="headerhny-left">
@@ -11,8 +10,7 @@
                             </div>
                         </div>
                     </div>
-                @endif
-                <div class="w3l-populohny-grids">
+                    <div class="w3l-populohny-grids">
                     @foreach ($data['contents'] as $content)
                             <div class="item vhny-grid">
                                 <div class="box16 mb-0">
@@ -48,4 +46,5 @@
 @endsection
 
 @push('scripts')
+
 @endpush
